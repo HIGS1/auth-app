@@ -1,2 +1,14 @@
 import sqlite3
-print("Imported sqlite3 successfully")
+
+conn = sqlite3.connect('database.db')
+
+cur = conn.cursor()
+
+cur.execute("""
+CREATE TABLE Users (
+    id INT PRIMARY KEY,
+    
+)
+""")
+
+
