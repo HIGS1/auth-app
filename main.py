@@ -1,14 +1,18 @@
-import sqlite3
+from pocketbase import PocketBase
+from getpass import getpass
 
-conn = sqlite3.connect('database.db')
+pb = PocketBase('https://tito.pockethost.io/')
 
-cur = conn.cursor()
+username_email = input('Username or Email: ')
+password = getpass('Password: ')
 
-cur.execute("""
-CREATE TABLE Users (
-    id INT PRIMARY KEY,
-    
+pb.collection('users').auth_with_password(
+    username_email,
+    password
 )
-""")
 
+if pb.auth_store.token == None:
+    print('Failed to Login')
+else:
+    print(f'Welcome back, {pb.auth_store.base_model.username}')
 
