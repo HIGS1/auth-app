@@ -1,5 +1,5 @@
 from tkinter.messagebox import showwarning, showerror, showinfo
-from login_system import PB_Manager
+from login_system.pb_conn import PB_Manager
 from .utils import resource_path
 import customtkinter as ctk
 from PIL import Image
