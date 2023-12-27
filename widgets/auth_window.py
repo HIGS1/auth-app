@@ -480,7 +480,7 @@ class AuthWindow(ctk.CTkToplevel):
                 self.forgot_password_btn.forget()
                 self.l_sign_up_btn.forget()
                 self.sign_in_btn.forget()
-        self.iconbitmap('assets/images/green_cat.ico')
+        self.iconbitmap(resource_path('assets/images/green_cat.ico'))
 
     def sign_up_btn_callback(self):
         username = self.r_username_entry.get().strip()

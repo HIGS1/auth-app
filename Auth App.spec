@@ -1,14 +1,11 @@
 # -*- mode: python ; coding: utf-8 -*-
-from PyInstaller.utils.hooks import collect_data_files
 
-datas = [('assets/images/*','assets/images')]
-datas += collect_data_files('assets/images')
 
 a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=datas,
+    datas=[('assets/images/*', 'assets/images')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -24,7 +21,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='main',
+    name='Auth App',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -37,5 +34,4 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=['assets\\images\\green_cat.ico'],
 )

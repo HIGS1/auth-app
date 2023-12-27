@@ -48,7 +48,7 @@ class PB_Manager:
                 'users').requestVerification(PB_Manager.user.email)
         except:
             print('Something went wrong while requesting account verification')
-        
+
         print('Verfication E-mail sent')
 
     def send_password_reset_email(email: str) -> None | str:
